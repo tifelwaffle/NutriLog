@@ -46,9 +46,9 @@ nav {
 }
 .btn-nav:hover { background:#b04d6c; }
 
-/* PAGES — only .show is visible */
-.pg { display:none; }
-.pg.show { display:block; }
+/*PAGES — only .show is visible*/
+.pg { visibility: hidden; height: 0; overflow: hidden; }
+.pg.show { visibility: visible; height: auto; overflow: visible; }
 
 /* ══════════════════════
    HOME
@@ -71,7 +71,7 @@ nav {
   font-weight:500; margin-bottom:18px;
 }
 
-/* CALC CARD */
+/*CALC CARD*/
 .calc {
   background:white; border-radius:20px; padding:28px;
   box-shadow:0 4px 24px rgba(0,0,0,.07); border:1px solid #f0ede8;
