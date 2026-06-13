@@ -73,8 +73,7 @@ nav {
 
 /*CALC CARD*/
 .calc {
-  background:white; border-radius:20px; padding:36px;
-  box-shadow:0 4px 24px rgba(209,211,221,.45); border:1px solid #f0ede8; display:flex; flex-direction:column; justify-content:space-between;
+  background:white; border-radius:20px; padding:36px; box-shadow:0 4px 24px rgba(0,0,0,.07); border:1px solid #f0ede8; display:flex; flex-direction:column; justify-content:space-between; min-height: 320px;
 }
 .calc h3 { font-size:16px; font-weight:600; margin-bottom:18px; }
 .row { display:flex; gap:10px; margin-bottom:12px; }
@@ -485,22 +484,18 @@ function go(page) {
 }
 
 function doLogin() {
-  window.addEventListener('load', function() {
-    document.getElementById('funfact').textContent = facts[Math.floor(Math.random() * facts.length)];});
-  go('home');
-}
-
-const facts = {
-  "💡 Tahukah kamu? Tubuh butuh minimal 0.8g protein per kg berat badan setiap harinya.",
-  "🥦 Fun fact: Brokoli punya lebih banyak protein per kalori dibanding daging sapi!",
-  "💧 Minum air sebelum makan bisa mengurangi asupan kalori hingga 13%.",
-  "🍌 Pisang mengandung tryptophan yang diubah tubuh jadi serotonin — mood booster alami!",
-  "🥚 Telur adalah salah satu sumber protein paling lengkap — mengandung semua asam amino esensial.",
-  "🌾 Serat makanan membantu memperlambat penyerapan gula, menjaga energi tetap stabil.",
-  "🫀 Lemak omega-3 dari ikan bisa menurunkan risiko penyakit jantung hingga 30%.",
-  "🍊 Vitamin C tidak hanya dari jeruk — paprika merah punya 3x lebih banyak dari jeruk!",
-];
-document.getElementById('funfact').textContent = facts[Math.floor(Math.random() * facts.length)};
+document.addEventListener('DOMContentLoaded', function() {
+  const facts = [
+    "💡 Tubuh butuh minimal 0.8g protein per kg berat badan setiap harinya.",
+    "🥦 Brokoli punya lebih banyak protein per kalori dibanding daging sapi!",
+    "💧 Minum air sebelum makan bisa mengurangi asupan kalori hingga 13%.",
+    "🍌 Pisang mengandung tryptophan — mood booster alami dari alam!",
+    "🥚 Telur mengandung semua asam amino esensial yang dibutuhkan tubuh.",
+    "🍊 Paprika merah punya 3x lebih banyak vitamin C dibanding jeruk!",
+  ];
+  const el = document.getElementById('funfact');
+  if(el) el.textContent = facts[Math.floor(Math.random() * facts.length)];
+});
 </script>
 </body>
 </html>
