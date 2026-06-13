@@ -54,7 +54,7 @@ nav {
    HOME
 ══════════════════════ */
 .hero {
-  display:grid; grid-template-columns:1fr 1fr; gap:48px;
+  display:grid; grid-template-columns:1fr 1.4fr; gap:48px;
   max-width:1400px; margin:0 auto; padding:56px 60px 40px;
   align-items:start;
 }
@@ -63,7 +63,7 @@ nav {
   line-height:1.15; margin-bottom:14px;
 }
 .hero-left h1 em { font-style:italic; color:var(--coral); }
-.hero-left p { color:var(--text-mid); font-size:18px; line-height:1.7; margin-bottom:12px; }
+.hero-left p { color:var(--text-mid); font-size:20px; line-height:1.7; margin-bottom:12px; }
   .badge {
   display:inline-flex; align-items:center; gap:6px;
   background:var(--mint-light); color:var(--mint-dark);
@@ -277,7 +277,7 @@ nav {
       <div class="badge">🌱 Nutrition Tracker</div>
       <h1>Hitung <em>Gizi</em><br>Makananmu!</h1>
       <p>Masukkan makanan yang kamu konsumsi hari ini dan langsung tahu berapa kalori, protein, karbohidrat, dan lemak yang kamu dapat.</p>
-      <p style="font-size:13px;color:var(--text-light);">*Mau lihat history sebulan? <a href="#" onclick="go('diary')" style="color:var(--coral);">Cek Diary →</a></p>
+      <p id="funfact" style="font-size:15px;color:var(--text-mid);background:#fffbe6;border-left:3px solid var(--yellow);padding:10px 14px;border-radius:8px;line-height:1.6;"></p>
     </div>
 
     <!-- kanan: kalkulator -->
@@ -488,6 +488,18 @@ function doLogin() {
   document.querySelector('.btn-nav').textContent = 'Hi, Kamu! 👋';
   go('home');
 }
+
+const facts = {
+  "💡 Tahukah kamu? Tubuh butuh minimal 0.8g protein per kg berat badan setiap harinya.",
+  "🥦 Fun fact: Brokoli punya lebih banyak protein per kalori dibanding daging sapi!",
+  "💧 Minum air sebelum makan bisa mengurangi asupan kalori hingga 13%.",
+  "🍌 Pisang mengandung tryptophan yang diubah tubuh jadi serotonin — mood booster alami!",
+  "🥚 Telur adalah salah satu sumber protein paling lengkap — mengandung semua asam amino esensial.",
+  "🌾 Serat makanan membantu memperlambat penyerapan gula, menjaga energi tetap stabil.",
+  "🫀 Lemak omega-3 dari ikan bisa menurunkan risiko penyakit jantung hingga 30%.",
+  "🍊 Vitamin C tidak hanya dari jeruk — paprika merah punya 3x lebih banyak dari jeruk!",
+];
+document.getElementById('funfact').textContent = facts[Math.floor(Math.random() * facts.length)};
 </script>
 </body>
 </html>
