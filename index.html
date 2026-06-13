@@ -56,7 +56,7 @@ nav {
 .hero {
   display:grid; grid-template-columns:1fr 1.4fr; gap:48px;
   max-width:1400px; margin:0 auto; padding:56px 60px 40px;
-  align-items:start;
+  align-items:stretch;
 }
 .hero-left h1 {
   font-family:'DM Serif Display',serif; font-size:54px;
@@ -74,7 +74,7 @@ nav {
 /*CALC CARD*/
 .calc {
   background:white; border-radius:20px; padding:36px;
-  box-shadow:0 4px 24px rgba(0,0,0,.07); border:1px solid #f0ede8;
+  box-shadow:0 4px 24px rgba(209,211,221,.45); border:1px solid #f0ede8; display:flex; flex-direction:column; justify-content:space-between;
 }
 .calc h3 { font-size:16px; font-weight:600; margin-bottom:18px; }
 .row { display:flex; gap:10px; margin-bottom:12px; }
@@ -277,7 +277,7 @@ nav {
       <div class="badge">🌱 Nutrition Tracker</div>
       <h1>Hitung <em>Gizi</em><br>Makananmu!</h1>
       <p>Masukkan makanan yang kamu konsumsi hari ini dan langsung tahu berapa kalori, protein, karbohidrat, dan lemak yang kamu dapat.</p>
-      <p id="funfact" style="font-size:15px;color:var(--text-mid);background:#fffbe6;border-left:3px solid var(--yellow);padding:10px 14px;border-radius:8px;line-height:1.6;"></p>
+      <p id="funfact" style="font-size:15px;color:var(--text-mid);line-height:1.6;margin-top:8px;"></p>
     </div>
 
     <!-- kanan: kalkulator -->
@@ -485,7 +485,8 @@ function go(page) {
 }
 
 function doLogin() {
-  document.querySelector('.btn-nav').textContent = 'Hi, Kamu! 👋';
+  window.addEventListener('load', function() {
+    document.getElementById('funfact').textContent = facts[Math.floor(Math.random() * facts.length)];});
   go('home');
 }
 
